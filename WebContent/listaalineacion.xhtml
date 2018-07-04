@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/WEB-INF/templates/base.xhtml">
+	<ui:define name="titulo">Lista partidos</ui:define>
+	<ui:define name="contenido">
+		<h:form>
+			<p:dataTable var="alineacion"
+				value="#{BeanListarAlineacion.alineaciones}">
+				<p:column headerText="Nombre">
+					<h:outputText value="#{alineacion.nombre}" />
+				</p:column>
+
+				<p:column headerText="Tanteo">
+					<h:outputText value="#{alineacion.tanteo}" />
+				</p:column>
+				
+				<p:column headerText="Color">
+					<h:outputText value="#{alineacion.color}" />
+				</p:column>
+				
+				<p:column headerText="Hora partido">
+					<h:outputText value="#{alineacion.partido.fecha}" />
+				</p:column>
+
+			</p:dataTable>
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>

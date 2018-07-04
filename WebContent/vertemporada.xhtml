@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/WEB-INF/templates/base.xhtml">
+	<ui:define name="titulo">Ver temporada</ui:define>
+	<ui:define name="contenido">
+		<p:panelGrid columns="2">
+
+			<h:outputText value="Nombre:" />
+			<h:outputText value="#{beanVerPartido.id}" />
+
+			<!-- <h:outputText value="Team:" />
+			<h:outputText value="#{beanVerPartido.lugar}" />
+
+			<h:outputText value="Position:" />
+			<h:outputText value="#{beanVerPartido.minimo}" /> -->
+
+		</p:panelGrid>
+
+		<!-- <p:tabView>
+			<p:tab title="Usuarios">
+				<h:panelGrid columns="2" cellpadding="10">
+					<p:dataTable var="usuario" value="#{beanVerPartido.usuarios}">
+						<p:column headerText="Nombre">
+							<h:outputText value="#{usuario.nombre}" />
+						</p:column>
+
+						<p:column headerText="Email">
+							<h:outputText value="#{usuario.mail}" />
+						</p:column>
+
+						<p:column headerText="Movil">
+							<h:outputText value="#{usuario.movil}" />
+						</p:column>
+
+					</p:dataTable>
+				</h:panelGrid>
+			</p:tab>
+			<p:tab title="Partidos">
+				<h:panelGrid columns="2" cellpadding="10">
+					<p:dataTable var="partido" value="#{beanVerPartido.partidos}">
+						<p:column headerText="Id">
+							<h:outputText value="#{partido.id}" />
+						</p:column>
+
+						<p:column headerText="Fecha">
+							<h:outputText value="#{partido.fecha}" />
+						</p:column>
+
+					</p:dataTable>
+				</h:panelGrid>
+			</p:tab>
+		</p:tabView>-->
+	</ui:define>
+</ui:composition>
+</html>
