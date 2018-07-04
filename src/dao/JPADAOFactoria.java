@@ -27,4 +27,9 @@ public class JPADAOFactoria extends DAOFactoria{
 		return new JPATemporadaDAO(this.emf);
 	}
 	
+	@Override
+	public AlineacionDAO getAlineacionDAO() {
+		return new JPAAlineacionDAO(this.emf);
+	}
+	
 }

@@ -221,6 +221,7 @@ public class Controlador {
 	public Collection<Partido> listarPartidos() {
 		PartidoDAO parDAO = DAOFactoria.getUnicaInstancia().getPartidoDAO();
 		try{
+			System.out.println(parDAO);
 			return parDAO.findAllPartidos();
 		} catch (DAOException e) {
 			e.printStackTrace();
