@@ -4,6 +4,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
 import java.util.Collection;
+import java.util.LinkedList;
 
 import modelo.Color;
 import modelo.Partido;
@@ -19,10 +20,12 @@ public class BeanCrearAlineacion {
 
 	private Color color;
 	
+	private Collection<Color> colores;
+	
 	private Long partidoId;
 	
 	private Collection<Partido> partidos;
-
+	
 	public String getNombre() {
 		return nombre;
 	}
@@ -45,6 +48,19 @@ public class BeanCrearAlineacion {
 
 	public void setColor(Color color) {
 		this.color = color;
+	}
+	
+	public Collection<Color> getColores() {
+		Color[] coloresArray = Color.values();
+		colores = new LinkedList<Color>();
+		for(int i=0; i < coloresArray.length; i++) {
+			colores.add(coloresArray[i]);
+		}
+		return colores;
+	}
+
+	public void setColores(Collection<Color> colores) {
+		this.colores = colores;
 	}
 
 	public Long getPartidoId() {

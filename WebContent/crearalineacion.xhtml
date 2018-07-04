@@ -20,8 +20,10 @@
 					</div>
 					<div class="form-group">
 						<h:outputText value="Color"></h:outputText>
-						<p:inputText class="form-control" id="color" value="#{beanCrearAlineacion.color}" required="true"/>
-						<h:message for="color" style="color:red" />
+						<p:selectOneMenu id="color" value="#{beanCrearAlineacion.color}">
+							<f:selectItem itemLabel="Selecciona" itemValue="" />
+							<f:selectItems value="#{beanCrearAlineacion.colores}" />
+						</p:selectOneMenu>
 					</div>
 					<div class="form-group">
 						<h:outputText value="Tanteo"></h:outputText>
