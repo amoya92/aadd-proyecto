@@ -12,4 +12,6 @@ public interface AlineacionDAO {
 	public Alineacion addUsuario(String alineacion, String usuario) throws DAOException;
 
 	public Collection<Alineacion> findAllAlineaciones() throws DAOException;
+
+	public Alineacion findAlineaciones(String nombre) throws DAOException;
 }

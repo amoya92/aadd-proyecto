@@ -83,10 +83,20 @@ public class JPAAlineacionDAO implements AlineacionDAO {
 		synchronized (emf) {
 			em = emf.createEntityManager();
 		}
-		System.out.println("Entra");
 		Query query = em.createNamedQuery("findAllAlineaciones");
-		System.out.println(query.toString());
 		return query.getResultList();
+	}
+
+	@Override
+	public Alineacion findAlineaciones(String nombre) throws DAOException {
+		EntityManager em = null;
+
+		synchronized (emf) {
+			em = emf.createEntityManager();
+		}
+		Alineacion ali = em.find(Alineacion.class, nombre);
+		
+		return ali;
 	}
 
 }

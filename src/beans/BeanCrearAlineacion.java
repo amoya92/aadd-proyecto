@@ -82,8 +82,13 @@ public class BeanCrearAlineacion {
 	
 	public String submit() {
 		System.out.println("Nombre" + nombre + " Color = " + color + "Partido = " + partidoId);
-		Controlador.getUnicaInstancia().registrarAlineacion(partidoId, nombre, color, tanteo);
-		return "listaalineacion";
+		
+		if(Controlador.getUnicaInstancia().verAlineacion(nombre) == null) {
+			Controlador.getUnicaInstancia().registrarAlineacion(partidoId, nombre, color, tanteo);
+			return "listaalineacion";
+		}else {
+			return "error";
+		}
 	}
 	
 	

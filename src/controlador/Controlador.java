@@ -238,4 +238,14 @@ public class Controlador {
 		}
 		return null;
 	}
+
+	public Object verAlineacion(String nombre) {
+		AlineacionDAO aliDAO = DAOFactoria.getUnicaInstancia().getAlineacionDAO();
+		try{
+			return aliDAO.findAlineaciones(nombre);
+		} catch (DAOException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
 }
