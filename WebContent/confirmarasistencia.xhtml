@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/WEB-INF/templates/base.xhtml">
+	<ui:define name="titulo">Crear temporada</ui:define>
+	<ui:define name="contenido">
+		<h:form>
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="form-group">
+						<p:outputLabel for="advanced" value="Partidos" />
+						<p:selectManyMenu id="advanced" value="#{beanConfirmarAsistencia.checked}"
+							var="p" showCheckbox="true">
+							<f:selectItems value="#{beanConfirmarAsistencia.partidos}" var="partido"
+								itemLabel="#{partido.fecha}" itemValue="#{partido.id}" />
+							<p:column>
+								<h:outputText value="#{p}" />
+							</p:column>
+						</p:selectManyMenu>
+					</div>
+
+					<div class="form-group">
+						<h:commandButton id="confirmar" action="#{beanConfirmarAsistencia.submit}"
+							value="confirmar" label="Confirmar"></h:commandButton>
+					</div>
+				</div>
+
+			</div>
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>

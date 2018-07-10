@@ -3,10 +3,15 @@ package beans;
 import java.util.Collection;
 import java.util.LinkedList;
 
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
+
 import controlador.Controlador;
 import modelo.Partido;
 import modelo.Temporada;
 
+@ManagedBean(name="beanConfirmarAsistencia")
+@SessionScoped
 public class BeanConfirmarAsistencia {
 
 	private Collection<Partido> partidos;

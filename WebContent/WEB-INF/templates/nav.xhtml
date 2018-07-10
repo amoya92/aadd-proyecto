@@ -26,9 +26,15 @@
 				<p:menuitem value="Crear alineación" url="/crearalineacion.xhtml" />
 				<p:menuitem value="Listar alineación" url="/listaalineacion.xhtml" />
 			</p:submenu>
+			
+			<p:submenu label="Usuario" icon="fa-user">
+				<p:menuitem value="Confirmar asistencia" url="/confirmarasistencia.xhtml" />
+			</p:submenu>
 
 			<f:facet name="options">
-				<p:commandButton type="button" value="Logout" icon="ui-icon-extlink" />
+				<h:form>
+					<p:commandButton value="#{beanUsuario.valorBoton}" id="nonAjax" action="#{beanUsuario.comprobarLogin}" ajax="false" />
+				</h:form>
 			</f:facet>
 		</p:menubar>
 	</h:form>

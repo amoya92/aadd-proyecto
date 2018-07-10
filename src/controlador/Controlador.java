@@ -42,6 +42,10 @@ public class Controlador {
 	public Usuario getUsuarioActual(){
 		return usuarioActual;
 	}
+	
+	public void setUsuarioActual(Usuario usuario) {
+		usuarioActual = usuario;
+	}
 
 	public Usuario registrarUsuario(String usuario, String clave, String mail, String movil){
 		try{
