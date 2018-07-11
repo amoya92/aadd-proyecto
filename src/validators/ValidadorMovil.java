@@ -16,7 +16,7 @@ public class ValidadorMovil implements Validator{
 		if(((String)value).length() != 9){
 			FacesMessage mensaje = new FacesMessage();
 			mensaje.setSummary("Error de movil.");
-			mensaje.setDetail("Error de movil: debe tener 9 dÃ­gitos.");
+			mensaje.setDetail("Error de movil: debe tener 9 dígitos.");
 			mensaje.setSeverity(FacesMessage.SEVERITY_ERROR);
 			throw new ValidatorException(mensaje);
 		}
